@@ -1,6 +1,5 @@
 public class Cactus extends Plant{
 
-
     public Cactus(String name, float length) {
         super(name, length);
     }

@@ -1,9 +1,12 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
         public static void main(String[] args){
            var scan = new Scanner(System.in);
 
+           //Polymorfism här där variabler av typen Plant kan referera till
+            // olika underklasser som Palm, Cactus och Carnivorous.
             Plant palmLaura = new Palm("Laura", 5f);
             Plant palmOlof = new Palm("Olof", 1f);
             Plant carnivorous = new Carnivorous("Meatloaf", 0.7f);
@@ -12,9 +15,9 @@ public class Main {
            boolean isRunning = true;
 
            while (isRunning) {
-               System.out.print("Vilken växt ska få vätska");
+               System.out.print("Vilken växt ska få vätska?");
 
-               String choice = scan.nextLine().trim();
+               String choice = scan.nextLine().trim().toLowerCase();
 
                if (choice.isEmpty()) {
                    System.out.println("Du måste ange ett växtnamn.");
@@ -22,24 +25,24 @@ public class Main {
                }
 
                switch (choice) {
-                   case "Igge" -> {
+                   case "igge" -> {
                        showFluidNeeds(cactus);
                        isRunning = false;
                    }
-                   case "Meatloaf" -> {
+                   case "meatloaf" -> {
                        showFluidNeeds(carnivorous);
                        isRunning = false;
                    }
-                   case "Laura" -> {
+                   case "laura" -> {
                        showFluidNeeds(palmLaura);
                        isRunning = false;
                    }
-                   case "Olof" -> {
+                   case "olof" -> {
                        showFluidNeeds(palmOlof);
                        isRunning = false;
                    }
                    default -> System.out.println(
-                           "Växten finns inte, försökt igen.");
+                           "Växten finns inte. försökt igen.");
 
                }
            }
@@ -47,7 +50,8 @@ public class Main {
         }
 
         private static void showFluidNeeds(Plant plant) {
-            System.out.printf("Vätskemängd %.2f liter per dag och vätsketypen är %s%n",
+            System.out.printf("%s behöver vätskemängd %.2f liter per dag och vätsketypen är %s%n",
+                    plant.getName(),
                     plant.calculateFluidNeeds(),
                     plant.getFluidType()
             );
