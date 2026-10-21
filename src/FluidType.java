@@ -1,7 +1,7 @@
 public enum FluidType {
-    TAP_WATER("Kranvatten"),
-    PROTEIN_DRINK("Proteindryck"),
-    MINERAL_WATER("Mineralvatten");
+    TAP_WATER("kranvatten"),
+    PROTEIN_DRINK("proteindryck"),
+    MINERAL_WATER("mineralvatten");
 
     private final String showFluidType;
 
