@@ -1,6 +1,6 @@
 // En abstrakt bassklass som samlar gemensamma egenskaper för alla växter.
-// implements watering innebär att klassen följer interfacets kontrakt.
-public abstract class Plant implements Watering {
+// implements waterable innebär att klassen följer interfacets kontrakt.
+public abstract class Plant implements Waterable {
     // inkapsliing där fälten är privata och nås via getters.
     private final String name;
     private final float length;

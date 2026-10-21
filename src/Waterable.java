@@ -1,4 +1,4 @@
 // Interface som definierar ett kontrakt för att beräkna vätskebehovet.
-public interface Watering {
+public interface Waterable {
     float  calculateFluidNeeds();
 }
